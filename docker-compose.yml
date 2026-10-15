@@ -19,6 +19,8 @@ services:
       - "3000:3000"
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/greensteels-dashboard.json:/var/lib/grafana/dashboards/greensteels-dashboard.json
     depends_on:
       - prometheus
 
